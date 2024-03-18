@@ -5,12 +5,12 @@
   "author": "Pedro Martín Valenciano",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lightbyte/tpp-cookie-consent"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/lightbyte/tpp-cookie-consent/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/lightbyte/tpp-cookie-consent",
   "keywords": [
     "angular",
     "javascript",
