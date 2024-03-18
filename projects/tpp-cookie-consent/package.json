@@ -1,6 +1,6 @@
 {
   "name": "tpp-cookie-consent",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Cookie consent popup for angular",
   "author": "Pedro Martín Valenciano",
   "repository": {
