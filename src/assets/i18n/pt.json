@@ -1,0 +1,24 @@
+{
+    "COOKIE-CONSENT":{
+        "NOTICE_LINK": "https://example.com/pt-pt/aviso-legal/",
+        "NOTICE_TEXT": "Aviso legal",
+        "COOKIES_LINK": "https://example.com/pt-pt/politica-de-cookie/",
+        "COOKIES_TEXT": "Política de cookies",
+        "PRIVACY_LINK": "https://example.com/pt-pt/politica-de-privacidade/",
+        "PRIVACY_TEXT": "Política de privacidade",
+        "COOKIES_PANEL_DISMIS": "Aceitar",
+        "COOKIES_PANEL_DENY": "Negar",
+        "COOKIES_PANEL_CONFIG": "Veja preferências",
+        "COOKIES_PANEL_SAVE": "Salvar preferências",
+        "COOKIES_PANEL_TITLE": "Gerencie o consentimento dos cookies",
+        "COOKIES_MESSAGE": "Utilizamos tecnologias como cookies para armazenar e/ou acessar informações do dispositivo. Fazemos isso para melhorar a experiência de navegação e mostrar anúncios personalizados. O consentimento para essas tecnologias nos permitirá processar dados como comportamento de navegação ou IDs exclusivos neste site. Não consente ou retire o consentimento, pode afetar negativamente certas características e funções.",
+        "COOKIES_PANEL_BLOCK_ACTIVE": "Sempre ativo",
+        "COOKIES_PANEL_BLOCK_1_TIT": "Funcional",
+        "COOKIES_PANEL_BLOCK_1_DESC": "O armazenamento ou acesso técnico é estritamente necessário para o objetivo legítimo de permitir o uso de um serviço específico solicitado explicitamente pelo assinante ou usuário ou com o único objetivo de realizar a transmissão de uma comunicação por meio de uma rede de comunicações eletrônicas.",
+        "COOKIES_PANEL_BLOCK_2_TIT": "Estatisticas",
+        "COOKIES_PANEL_BLOCK_2_DESC": "O armazenamento ou acesso técnico que é usado exclusivamente para fins estatísticos anônimos. Sem um requisito, conformidade voluntária pelo seu provedor de serviços de Internet ou pelos registros adicionais de terceiros, as informações armazenadas ou recuperadas apenas para esse fim não podem ser usadas para identificá -lo.",
+        "COOKIES_PANEL_BLOCK_3_TIT": "Marketing",
+        "COOKIES_PANEL_BLOCK_3_DESC": "O armazenamento técnico ou o acesso é necessário para criar perfis de usuário para enviar publicidade ou rastrear o usuário em um site ou em vários sites para fins de marketing semelhantes.",
+        "COOKIES_BUTTON_COOKIE": "Gerenciar consentimento"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "COOKIE-CONSENT":{
+        "NOTICE_LINK": "https://example.com/fr/avis-juridique/",
+        "NOTICE_TEXT": "Avviso legale",
+        "COOKIES_LINK": "https://example.com/fr/politique-de-cookies/",
+        "COOKIES_TEXT": "Politica sui cookie",
+        "PRIVACY_LINK": "https://example.com/fr/politique-de-confidentialite/",
+        "PRIVACY_TEXT": "Informativa sulla privacy",
+        "COOKIES_PANEL_DISMIS": "Accepter",
+        "COOKIES_PANEL_DENY": "Refuser",
+        "COOKIES_PANEL_CONFIG": "Voir les préférences",
+        "COOKIES_PANEL_SAVE": "Sauver les préférences",
+        "COOKIES_PANEL_TITLE": "Gérer le consentement des cookies",
+        "COOKIES_MESSAGE": "Nous utilisons des technologies telles que des cookies pour stocker et / ou accéder aux informations des appareils. Nous le faisons pour améliorer l'expérience de navigation et afficher des annonces personnalisées. Le consentement à ces technologies nous permettra de traiter des données telles que le comportement de navigation ou les ID uniques sur ce site. Ne consentez pas ou ne retirez pas le consentement, peut affecter négativement certaines caractéristiques et fonctions.",
+        "COOKIES_PANEL_BLOCK_ACTIVE": "Toujours activé",
+        "COOKIES_PANEL_BLOCK_1_TIT": "Fonctionnel",
+        "COOKIES_PANEL_BLOCK_1_DESC": "Le stockage ou l'accès technique est strictement nécessaire dans le but légitime de permettre l'utilisation d'un service spécifique explicitement demandé par l'abonné ou l'utilisateur, ou dans le seul but de réaliser la transmission d'une communication via un réseau de communication électronique.",
+        "COOKIES_PANEL_BLOCK_2_TIT": "Statistiques",
+        "COOKIES_PANEL_BLOCK_2_DESC": "Le stockage ou l'accès technique utilisé exclusivement à des fins statistiques anonymes. Sans exigence, la conformité volontaire de votre fournisseur de services Internet ou les dossiers supplémentaires d'un tiers, les informations stockées ou récupérées uniquement à cet effet ne peuvent pas être utilisées pour vous identifier.",
+        "COOKIES_PANEL_BLOCK_3_TIT": "Marketing",
+        "COOKIES_PANEL_BLOCK_3_DESC": "Un stockage ou un accès technique est nécessaire pour créer des profils d'utilisateurs pour envoyer de la publicité, ou pour suivre l'utilisateur sur un site Web ou sur plusieurs sites Web à des fins de marketing similaires.",
+        "COOKIES_BUTTON_COOKIE": "Gérer le consentement"
+    }
+}

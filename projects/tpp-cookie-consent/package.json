@@ -1,0 +1,27 @@
+{
+  "name": "tpp-cookie-consent",
+  "version": "0.0.1",
+  "description": "Cookie consent popup for angular",
+  "author": "Pedro Martín Valenciano",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

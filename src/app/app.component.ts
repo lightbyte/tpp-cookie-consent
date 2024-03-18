@@ -1,10 +1,120 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
+import { Subject, filter, take, takeUntil } from 'rxjs';
+import { TppCookieConsentService } from 'tpp-cookie-consent';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy{
   title = 'tpp-cookie-consent';
+
+  private _unsubscribeAll: Subject<any> = new Subject<any>();
+  
+  constructor(
+    private translocoService: TranslocoService,
+    private ccService: TppCookieConsentService
+  ){}
+
+
+  ngOnInit() {
+
+    console.log("INIT APP COMPONENT");
+    this.initCookieConsentLib();
+
+  }
+
+  initCookieConsentLib() {
+
+    this.ccService.statusChangedEvent().pipe(
+      filter(value => value.length > 0),
+      takeUntil(this._unsubscribeAll)
+    ).subscribe(status => {
+      console.log("APP COMPONENT - STATUS CHANGED");
+      // this.authService.setCookieConsentStatus(status);
+      // this.googleAnalyticsService.set
+    });
+
+    this.ccService.initLibraryEvent().pipe(
+      take(1),
+      takeUntil(this._unsubscribeAll)
+    ).subscribe(() => {
+      console.log("APP COMPONENT - LIB INITIALIZED");
+
+      this.translocoService.selectTranslateObject("COOKIE-CONSENT")
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe(trans => {
+          console.log("COOKIE-CONSENT TRANSLATIONS");
+
+          this.ccService.setConfig({
+            // addCookieButtonOnStart: true,
+            buttonText: trans.COOKIES_BUTTON_COOKIE,
+            bannerTitle: trans.COOKIES_PANEL_TITLE,
+            bannerText: trans.COOKIES_MESSAGE,
+            bannerBlocks: [
+              {
+                id: "1",
+                title: trans.COOKIES_PANEL_BLOCK_1_TIT,
+                allwaysActive: true,
+                allwaysActiveText: trans.COOKIES_PANEL_BLOCK_ACTIVE,
+                description: trans.COOKIES_PANEL_BLOCK_1_DESC
+              },
+              {
+                id: "2",
+                title: trans.COOKIES_PANEL_BLOCK_2_TIT,
+                description: trans.COOKIES_PANEL_BLOCK_2_DESC
+              },
+              {
+                id: "3",
+                title: trans.COOKIES_PANEL_BLOCK_3_TIT,
+                description: trans.COOKIES_PANEL_BLOCK_3_DESC
+              }
+            ],
+            bannerButtons: [
+              { id: 'ok', text: trans.COOKIES_PANEL_DISMIS },
+              { id: 'cancel', text: trans.COOKIES_PANEL_DENY },
+              { id: 'config', text: trans.COOKIES_PANEL_CONFIG },
+              { id: 'save', text: trans.COOKIES_PANEL_SAVE }
+            ],
+            bannerLinks: [
+              {
+                text: trans.COOKIES_TEXT,
+                url: trans.COOKIES_LINK
+              },
+              {
+                text: trans.PRIVACY_TEXT,
+                url: trans.PRIVACY_LINK
+              },
+              {
+                text: trans.NOTICE_TEXT,
+                url: trans.NOTICE_LINK
+              }
+            ]
+          });
+
+        });
+      this.ccService.addCookieButton();
+      console.log("APP COMPONENT - FINISH INITIALIZATION");
+    });
+  }
+
+  showButton(){
+    this.ccService.addCookieButton();
+  }
+  hideButton(){
+    this.ccService.removeCookieButton();
+  }
+  showDialog(){
+    this.ccService.openPopup();
+  }
+  hideDialog(){
+    this.ccService.closePopup();
+  }
+
+  ngOnDestroy() {
+    this._unsubscribeAll.next(null);
+    this._unsubscribeAll.complete();
+  }
 }

@@ -1,0 +1,36 @@
+<div class="tppcc-banner" [class]="getClasses()" [class.showBtn]="isBtnOpen" [class.showDlg]="isDlgOpen" [class.config]="isConfigOpen">
+    <div class="tppcc-banner-button" (click)="cookieButtonClick()">
+        {{ config.buttonText }}
+    </div>
+    <div class="tppcc-banner-dlg">
+        <div class="tppcc-banner-dlg-header">
+            <div *ngIf="config.bannerTitle" class="tppcc-dlg-title">{{ config.bannerTitle }}</div>
+            <div (click)="dlgButtonClick('close')" class="tppcc-banner-dlg-close">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+            </div>
+        </div>
+            
+        <div class="tppcc-banner-dlg-content">
+            <div *ngIf="config.bannerText" class="tppcc-dlg-desc">{{ config.bannerText }}</div>
+            <div *ngIf="config.bannerBlocks" class="tppcc-blocks" [class.open]="isConfigOpen">
+                <ul>
+                    <li *ngFor="let block of this.config.bannerBlocks; trackBy: trackItem">
+                        <lib-tppcc-block [block]="block" (changedEvent)="blockChanged(block, $event)"></lib-tppcc-block>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tppcc-buttons">
+            <div *ngFor="let btn of buttons" class="tppcc-button-wrapper">
+                <button (click)="dlgButtonClick(btn.id)" class="tppcc-button tppcc-button-{{ btn.id }}">{{ btn.text }}</button>
+            </div>
+        </div>
+
+        <div class="tppcc-links">
+            <div *ngFor="let link of config.bannerLinks">
+                <a class="tppcc-link" [href]="link.url" [target]="link.target">{{ link.text }}</a>
+            </div>
+        </div>
+    </div>
+</div>

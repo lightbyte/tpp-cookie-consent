@@ -1,0 +1,24 @@
+{
+    "COOKIE-CONSENT":{
+        "NOTICE_LINK": "https://example.com/ro/avertisment-legal/",
+        "NOTICE_TEXT": "Aviz juridic",
+        "COOKIES_LINK": "https://example.com/ro/politica-de-cookies/",
+        "COOKIES_TEXT": "Politica privind cookie-urile",
+        "PRIVACY_LINK": "https://example.com/ro/politica-de-confidentialitate/",
+        "PRIVACY_TEXT": "Politica de confidențialitate",
+        "COOKIES_PANEL_DISMIS": "Accept",
+        "COOKIES_PANEL_DENY": "Negă",
+        "COOKIES_PANEL_CONFIG": "Vezi preferințe",
+        "COOKIES_PANEL_SAVE": "Salvați preferințele",
+        "COOKIES_PANEL_TITLE": "Gestionați acordul cookie -urilor",
+        "COOKIES_MESSAGE": "Folosim tehnologii precum cookie -uri pentru a stoca și/sau accesul informațiilor despre dispozitiv. O facem pentru a îmbunătăți experiența de navigație și pentru a arăta reclame personalizate. Consimțământul pentru aceste tehnologii ne va permite să procesăm date, cum ar fi comportamentul de navigare sau ID -urile unice pe acest site. Nu consimțiți sau retrageți consimțământul, poate afecta negativ anumite caracteristici și funcții.",
+        "COOKIES_PANEL_BLOCK_ACTIVE": "Mereu activ",
+        "COOKIES_PANEL_BLOCK_1_TIT": "Funcţional",
+        "COOKIES_PANEL_BLOCK_1_DESC": "Stocarea sau accesul tehnic este strict necesar în scopul legitim de a permite utilizarea unui serviciu specific solicitat în mod explicit de abonat sau utilizator sau cu scopul exclusiv de a efectua transmiterea unei comunicări printr -o rețea de comunicații electronice.",
+        "COOKIES_PANEL_BLOCK_2_TIT": "Statistici",
+        "COOKIES_PANEL_BLOCK_2_DESC": "Stocarea sau accesul tehnic care este utilizat exclusiv în scopuri statistice anonime. Fără o cerință, respectarea voluntară de către furnizorul de servicii de internet sau înregistrările suplimentare ale unei terțe părți, informațiile stocate sau recuperate numai în acest scop nu pot fi utilizate pentru a vă identifica.",
+        "COOKIES_PANEL_BLOCK_3_TIT": "Marketing",
+        "COOKIES_PANEL_BLOCK_3_DESC": "Stocare tehnică sau acces este necesară pentru a crea profiluri de utilizator pentru a trimite publicitate sau pentru a urmări utilizatorul pe un site web sau pe mai multe site -uri web în scopuri de marketing similare.",
+        "COOKIES_BUTTON_COOKIE": "Gestionează consimțământul"
+    }
+}

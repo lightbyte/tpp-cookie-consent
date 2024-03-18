@@ -1,0 +1,24 @@
+{
+    "COOKIE-CONSENT":{
+        "NOTICE_LINK": "https://example.com/it/avviso-legale/",
+        "NOTICE_TEXT": "Avviso legale",
+        "COOKIES_LINK": "https://example.com/it/politica-sui-cookie/",
+        "COOKIES_TEXT": "Politica sui cookie",
+        "PRIVACY_LINK": "https://example.com/it/politica-sulla-privacy/",
+        "PRIVACY_TEXT": "Informativa sulla privacy",
+        "COOKIES_PANEL_DISMIS": "Accettare",
+        "COOKIES_PANEL_DENY": "Declino",
+        "COOKIES_PANEL_CONFIG": "Vedi le preferenze",
+        "COOKIES_PANEL_SAVE": "Salva preferenze",
+        "COOKIES_PANEL_TITLE": "Gestisci il consenso dei cookie",
+        "COOKIES_MESSAGE": "Usiamo tecnologie come cookie per archiviare e/o accedere alle informazioni sul dispositivo. Lo facciamo per migliorare l'esperienza di navigazione e per mostrare annunci personalizzati. Il consenso a queste tecnologie ci consentirà di elaborare dati come il comportamento di navigazione o ID univoci su questo sito. Non acconsentire o prelevare il consenso, può influire negativamente a determinate caratteristiche e funzioni.",
+        "COOKIES_PANEL_BLOCK_ACTIVE": "Sempre attivo",
+        "COOKIES_PANEL_BLOCK_1_TIT": "Funzionale",
+        "COOKIES_PANEL_BLOCK_1_DESC": "L'archiviazione o l'accesso tecnico è strettamente necessario allo scopo legittimo di consentire l'uso di un servizio specifico esplicitamente richiesto dall'abbonato o dall'utente o con l'unico scopo di eseguire la trasmissione di una comunicazione attraverso una rete di comunicazioni elettroniche.",
+        "COOKIES_PANEL_BLOCK_2_TIT": "Statistiche",
+        "COOKIES_PANEL_BLOCK_2_DESC": "Lo stoccaggio o l'accesso tecnico utilizzato esclusivamente per scopi statistici anonimi. Senza un requisito, la conformità volontaria da parte del tuo fornitore di servizi Internet o i registri aggiuntivi di una terza parte, le informazioni archiviate o recuperate solo a tale scopo non possono essere utilizzate per identificarti.",
+        "COOKIES_PANEL_BLOCK_3_TIT": "Marketing",
+        "COOKIES_PANEL_BLOCK_3_DESC": "L'archiviazione o l'accesso tecnico è necessario per creare profili utente per inviare pubblicità o per tenere traccia dell'utente su un sito Web o su più sito Web per scopi di marketing simili.",
+        "COOKIES_BUTTON_COOKIE": "Gestire il consenso"
+    }
+}

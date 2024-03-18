@@ -1,0 +1,24 @@
+{
+    "COOKIE-CONSENT":{
+        "NOTICE_LINK": "https://example.com/en/legal-notice/",
+        "NOTICE_TEXT": "Legal Notice",
+        "COOKIES_LINK": "https://example.com/en/cookie-policy/",
+        "COOKIES_TEXT": "Cookie Policy",
+        "PRIVACY_LINK": "https://example.com/en/privacy-policy/",
+        "PRIVACY_TEXT": "Privacy Policy",
+        "COOKIES_PANEL_DISMIS": "Accept",
+        "COOKIES_PANEL_DENY": "Deny",
+        "COOKIES_PANEL_CONFIG": "Preferences",
+        "COOKIES_PANEL_SAVE": "Save preferences",
+        "COOKIES_PANEL_TITLE": "Manage the consent of cookies",
+        "COOKIES_MESSAGE": "We use technologies such as cookies to store and/or access device information. We do it to improve the navigation experience and to show personalized ads. The consent to these technologies will allow us to process data such as navigation behavior or unique IDs on this site. Do not consent or withdraw consent, can negatively affect certain characteristics and functions.",
+        "COOKIES_PANEL_BLOCK_ACTIVE": "Always active",
+        "COOKIES_PANEL_BLOCK_1_TIT": "Functional",
+        "COOKIES_PANEL_BLOCK_1_DESC": "The storage or technical access is strictly necessary for the legitimate purpose of allowing the use of a specific service explicitly requested by the subscriber or user, or with the sole purpose of carrying out the transmission of a communication through an electronic communications network.",
+        "COOKIES_PANEL_BLOCK_2_TIT": "Statistics",
+        "COOKIES_PANEL_BLOCK_2_DESC": "The storage or technical access that is used exclusively for anonymous statistical purposes. Without a requirement, voluntary compliance by your Internet services provider, or the additional records of a third party, the information stored or recovered only for this purpose cannot be used to identify you.",
+        "COOKIES_PANEL_BLOCK_3_TIT": "Marketing",
+        "COOKIES_PANEL_BLOCK_3_DESC": "Technical storage or access is necessary to create user profiles to send advertising, or to track the user on a website or on several website for similar marketing purposes.",
+        "COOKIES_BUTTON_COOKIE": "Manage consent"
+    }
+}
