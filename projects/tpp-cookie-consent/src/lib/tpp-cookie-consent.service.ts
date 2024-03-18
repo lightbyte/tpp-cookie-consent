@@ -97,7 +97,7 @@ export class TppCookieConsentService {
   updateCookieFromStatus() {
     // Actualizar el estado de la cookie de consentimiento
 
-    let isDismiss = false;
+    let isDenyAll = true;
     let cookie: any[] = [];
 
     this.config.bannerBlocks?.forEach(block => {
@@ -107,10 +107,11 @@ export class TppCookieConsentService {
       });
       // Si hay alguna en 'dismiss' es que se ha dado a "cancel" 
       // y deberían estar todas en 'dismiss'
-      if (block.status == 'dismiss') isDismiss = true;
+      // if (block.status == 'dismiss') isDismiss = true;
+      isDenyAll = isDenyAll && block.status != 'allow';
     });
 
-    if (isDismiss) {
+    if (isDenyAll) {
       // Limpia su cookie (La app deberá gestionar su propia mierda)
       localStorage.removeItem(TPP_COOKIE_CONSENT_NAME);
 
