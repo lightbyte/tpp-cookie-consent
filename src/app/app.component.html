@@ -1,14 +1,41 @@
 <div class="wrapper">
-  <div class="centerblock">
-    <h3 class="item">Button</h3>
-    <button (click)="showButton()" class="item">Show Button</button>
-    <button (click)="hideButton()" class="item">Hide Button</button>
-  </div>
-  <div class="centerblock">
-    <h3 class="item">Dialog</h3>
-    <button (click)="showDialog()" class="item">Show Dialog</button>
-    <button (click)="hideDialog()" class="item">Hide Dialog</button>
+  <div class="block1">
+    <div class="block2">
+      <h3 class="item">Button</h3>
+      <button (click)="showButton()" class="item">Show Button</button>
+      <button (click)="hideButton()" class="item">Hide Button</button>
+    </div>
+    <div class="block2">
+      <h3 class="item">Dialog</h3>
+      <button (click)="showDialog()" class="item">Show Dialog</button>
+      <button (click)="hideDialog()" class="item">Hide Dialog</button>
+      <select [(ngModel)]="v_align" (change)="refreshConfig()">
+        <option value="top">top</option>
+        <option value="bottom">bottom</option>
+      </select>
+      <select [(ngModel)]="h_align" (change)="refreshConfig()">
+        <option value="left">left</option>
+        <option value="right">right</option>
+      </select>
+      <label><input type="checkbox" [(ngModel)]="center_dialog" value="1" (change)="refreshConfig()"> Center dialog</label>
+      <label><input type="checkbox" [(ngModel)]="expand_config" value="1" (change)="refreshConfig()"> Expand config</label>
+    </div>
+
   </div>
   <!-- TODO: ADD DIV WITH BLOCK STATUS CHANGES -->
+  <div class="block1">
+    <div class="block2">
+      <h3 class="item">STATUS</h3>
+      <div class="ul-wrapper">
+        <ul>
+          <li *ngFor="let s of status">{{ s.id }} - {{ s.status }}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
   <!-- TODO: ADD LANGUAGE SWITCH -->
+  <div class="block1">
+    <h3>LANGUAGE</h3>
+  </div>
 </div>

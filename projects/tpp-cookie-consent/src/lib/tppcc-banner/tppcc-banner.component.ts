@@ -33,9 +33,7 @@ export class TppccBannerComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (this.config.addCookieButtonOnStart){
-      this.isBtnOpen = true;
-    }
+    this.autoExpandConfig();
 
     // CONFIG
     this.cookieService.configChanged$.subscribe(() => {
@@ -59,7 +57,8 @@ export class TppccBannerComponent implements OnInit {
       // console.log("OPEN POPUP RECEIVED");
       this.cookieService.resetStatus();
       
-      this.isConfigOpen = false;
+      this.autoExpandConfig();
+
       this.isBtnOpenRestore = this.isBtnOpen;
       this.isDlgOpen = true;
       
@@ -91,9 +90,20 @@ export class TppccBannerComponent implements OnInit {
   }
 
   getClasses() {
-    let classes = ["bottom"];
+    let classes = [];
 
-    switch (this.config.alignment) {
+    switch (this.config.v_align) {
+      case "top":
+        classes.push("top");
+        break;
+      case "bottom":
+        classes.push("bottom");
+        break;
+      default:
+        classes.push("bottom");
+    }
+
+    switch (this.config.h_align) {
       case "left":
         classes.push("left");
         break;
@@ -104,11 +114,15 @@ export class TppccBannerComponent implements OnInit {
         classes.push("right");
     }
 
+    if (this.config.center_dialog){
+      classes.push("center-dlg");
+    }
+
     return classes;
   }
 
   cookieButtonClick() {
-    this.isConfigOpen = false;
+    this.autoExpandConfig();
     this.isBtnOpenRestore = this.isBtnOpen;
     this.isDlgOpen = !this.isDlgOpen;
     this.isBtnOpen = !this.isBtnOpen;
@@ -145,6 +159,13 @@ export class TppccBannerComponent implements OnInit {
     this.config.bannerBlocks?.forEach(block => {
       block.status = 'deny';
     });
+  }
+
+  autoExpandConfig(){
+    this.isConfigOpen = false;
+    if (this.config.expandConfig && this.config.expandConfig === true){
+      this.isConfigOpen = true;
+    }
   }
 
   dlgButtonClick(btnId: string) {

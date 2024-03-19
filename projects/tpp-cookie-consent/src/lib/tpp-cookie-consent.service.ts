@@ -38,6 +38,7 @@ export class TppCookieConsentService {
 
   initializeLib() {
 
+    this.denyAllStatus();
     this.updateStatusFromCookie();
     this.sendStatusChangedEvent();
 
@@ -53,6 +54,7 @@ export class TppCookieConsentService {
   setConfig(newConfig: TppCookieConsentConfig) {
     console.log("NEW CONFIG UPDATED");
     Object.assign(this.config, newConfig);
+    this.denyAllStatus();
     this.updateStatusFromCookie();
     this.configChanged$.next(true);
     this.sendStatusChangedEvent();
@@ -65,15 +67,16 @@ export class TppCookieConsentService {
     });
   }
 
-  updateStatusFromCookie() {
-    console.log("UPDATE STATUS FROM COOKIES");
+  denyAllStatus() {
     // Inicializar el estado de los bloques
     this.config.bannerBlocks?.forEach(block => {
-      // console.log("BLOCK STATUS 1", block);
-      block.status = block.allwaysActive ? 'allow' : block.status !== undefined ? block.status : 'deny';
-      // console.log("BLOCK STATUS 2", block);
+      block.status = 'deny';
     });
+  }
 
+  updateStatusFromCookie() {
+    console.log("UPDATE STATUS FROM COOKIES");
+    
     // Leer la cookie de la librería para ver el estado actual de consentimiento y actualizar en consecuencia
     const statusJSON = localStorage.getItem(TPP_COOKIE_CONSENT_NAME);
     if (statusJSON != null) {
@@ -81,19 +84,20 @@ export class TppCookieConsentService {
       try {
         const status = JSON.parse(statusJSON);
         this.config.bannerBlocks?.forEach(block => {
-          let found = false;
+          
           status.forEach((val: any) => {
             if (val.id == block.id) {
               block.status = val.status;
-              found = true;
             }
           });
+
         });
       } catch (error) {
         console.log("ERROR PARSEANDO COOKIE DE ESTADO", error);
       }
     }
   }
+  
   updateCookieFromStatus() {
     // Actualizar el estado de la cookie de consentimiento
 

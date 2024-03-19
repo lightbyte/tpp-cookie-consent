@@ -8,15 +8,22 @@ import { TppCookieConsentService } from 'tpp-cookie-consent';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
   title = 'tpp-cookie-consent';
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
-  
+
+  status: any[] = [];
+  firstTime = true;
+  v_align = "bottom";
+  h_align = "right";
+  center_dialog = false;
+  expand_config = false;
+
   constructor(
     private translocoService: TranslocoService,
     private ccService: TppCookieConsentService
-  ){}
+  ) { }
 
 
   ngOnInit() {
@@ -35,6 +42,9 @@ export class AppComponent implements OnInit, OnDestroy{
       console.log("APP COMPONENT - STATUS CHANGED");
       // this.authService.setCookieConsentStatus(status);
       // this.googleAnalyticsService.set
+      this.status = status;
+
+      this.showDialogFirstTime();
     });
 
     this.ccService.initLibraryEvent().pipe(
@@ -48,8 +58,8 @@ export class AppComponent implements OnInit, OnDestroy{
         .subscribe(trans => {
           console.log("COOKIE-CONSENT TRANSLATIONS");
 
+          this.firstTime = true;
           this.ccService.setConfig({
-            // addCookieButtonOnStart: true,
             buttonText: trans.COOKIES_BUTTON_COOKIE,
             bannerTitle: trans.COOKIES_PANEL_TITLE,
             bannerText: trans.COOKIES_MESSAGE,
@@ -91,7 +101,11 @@ export class AppComponent implements OnInit, OnDestroy{
                 text: trans.NOTICE_TEXT,
                 url: trans.NOTICE_LINK
               }
-            ]
+            ],
+            h_align: this.h_align,
+            v_align: this.v_align,
+            center_dialog: (this.center_dialog ? true : false),
+            expandConfig: (this.expand_config ? true : false)
           });
 
         });
@@ -100,17 +114,40 @@ export class AppComponent implements OnInit, OnDestroy{
     });
   }
 
-  showButton(){
+  showDialogFirstTime() {
+    if (!this.firstTime) return;
+    this.firstTime = false;
+    
+    
+    let isDenyAll = true;
+    this.status.forEach(val => {
+      isDenyAll = isDenyAll && val.status == 'deny';
+    });
+    if (isDenyAll) {
+      this.ccService.openPopup();
+    }
+  }
+
+  showButton() {
     this.ccService.addCookieButton();
   }
-  hideButton(){
+  hideButton() {
     this.ccService.removeCookieButton();
   }
-  showDialog(){
+  showDialog() {
     this.ccService.openPopup();
   }
-  hideDialog(){
+  hideDialog() {
     this.ccService.closePopup();
+  }
+
+  refreshConfig(){
+    this.ccService.setConfig({
+      h_align: this.h_align,
+      v_align: this.v_align,
+      center_dialog: (this.center_dialog ? true : false),
+      expandConfig: (this.expand_config ? true : false)
+    });
   }
 
   ngOnDestroy() {

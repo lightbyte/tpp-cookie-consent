@@ -10,8 +10,10 @@ export interface TppCookieConsentConfig {
     bannerBlocks?: TppBannerBlock[];
     bannerButtons?: TppBannerButton[];
     bannerLinks?: TppBannerLink[];
-    alignment?: string;
-    addCookieButtonOnStart?: boolean;
+    v_align?: string;
+    h_align?: string;
+    center_dialog?: boolean;
+    expandConfig?: boolean;
 }
 
 export const TPPCC_CONFIG = new InjectionToken<TppCookieConsentConfig>('TPPCC_CONFIG');

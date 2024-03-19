@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { TppCookieConsentConfig, TppCookieConsentModule } from 'tpp-cookie-consent';
 import { TranslocoRootModule } from './transloco-root.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
 const configTppCC:TppCookieConsentConfig = {
-  // addCookieButtonOnStart: true,
   buttonText: "Gestionar consentimiento",
   bannerTitle: "Gestionar el consentimiento de las cookies",
   bannerText: "Utilizamos tecnologías como las cookies para almacenar y/o acceder a la información del dispositivo. Lo hacemos para mejorar la experiencia de navegación y para mostrar anuncios (no) personalizados. El consentimiento a estas tecnologías nos permitirá procesar datos como el comportamiento de navegación o los ID's únicos en este sitio. No consentir o retirar el consentimiento, puede afectar negativamente a ciertas características y funciones.",
@@ -29,7 +29,8 @@ const configTppCC:TppCookieConsentConfig = {
     {text: 'Política de privacidad', url: 'https://www.agrovin.com/politica-de-privacidad/'},
     {text: 'Aviso legal', url: 'https://www.agrovin.com/aviso-legal/'}
   ],
-  alignment: "right"
+  h_align: "right",
+  v_align: "bottom"
 };
 
 
@@ -40,6 +41,7 @@ const configTppCC:TppCookieConsentConfig = {
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     TranslocoRootModule,
     TppCookieConsentModule.forRoot(configTppCC)
   ],
