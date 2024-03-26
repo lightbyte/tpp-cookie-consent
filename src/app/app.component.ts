@@ -19,6 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
   h_align = "right";
   center_dialog = false;
   expand_config = false;
+  logger = 'logger: ';
 
   constructor(
     private translocoService: TranslocoService,
@@ -91,7 +92,9 @@ export class AppComponent implements OnInit, OnDestroy {
             bannerLinks: [
               {
                 text: trans.COOKIES_TEXT,
-                url: trans.COOKIES_LINK
+                url: trans.COOKIES_LINK,
+                isButton: true,
+                btnCallback: () => this.callbackBtn()
               },
               {
                 text: trans.PRIVACY_TEXT,
@@ -139,6 +142,14 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   hideDialog() {
     this.ccService.closePopup();
+  }
+
+  callbackBtn(){
+    setTimeout(() => {
+      console.log("CALLBACK WORKS!");
+      this.logger = this.logger + "<br>Callback works!";
+      
+    }, 0);
   }
 
   refreshConfig(){

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TppCookieConsentConfig } from '../types/tpp-cookie-consent-config';
 import { TppCookieConsentService } from '../tpp-cookie-consent.service';
 import { TppBannerBlock } from '../types/tpp-banner-block';
+import { TppBannerLink } from '../types/tpp-banner-link';
 
 @Component({
   selector: 'lib-tppcc-banner',
@@ -201,6 +202,12 @@ export class TppccBannerComponent implements OnInit {
         this.isBtnOpen = this.isBtnOpenRestore;
         this.cookieService.sendPopupClosedEvent();
         break;
+    }
+  }
+
+  callback(link: TppBannerLink){
+    if (link.btnCallback){
+      link.btnCallback();
     }
   }
 }

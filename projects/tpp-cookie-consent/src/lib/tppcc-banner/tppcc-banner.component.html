@@ -29,7 +29,8 @@
 
         <div class="tppcc-links">
             <div *ngFor="let link of config.bannerLinks">
-                <a class="tppcc-link" [href]="link.url" [target]="link.target">{{ link.text }}</a>
+                <a *ngIf="!link.isButton" class="tppcc-link" [href]="link.url" [target]="link.target">{{ link.text }}</a>
+                <a *ngIf="link.isButton" class="tppcc-link" (click)="callback(link)">{{ link.text }}</a>
             </div>
         </div>
     </div>
