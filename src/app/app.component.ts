@@ -76,12 +76,12 @@ export class AppComponent implements OnInit, OnDestroy {
                 id: "2",
                 title: trans.COOKIES_PANEL_BLOCK_2_TIT,
                 description: trans.COOKIES_PANEL_BLOCK_2_DESC
-              },
-              {
-                id: "3",
-                title: trans.COOKIES_PANEL_BLOCK_3_TIT,
-                description: trans.COOKIES_PANEL_BLOCK_3_DESC
-              }
+              }//,
+              // {
+              //   id: "3",
+              //   title: trans.COOKIES_PANEL_BLOCK_3_TIT,
+              //   description: trans.COOKIES_PANEL_BLOCK_3_DESC
+              // }
             ],
             bannerButtons: [
               { id: 'ok', text: trans.COOKIES_PANEL_DISMIS },

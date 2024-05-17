@@ -162,6 +162,12 @@ export class TppccBannerComponent implements OnInit {
     });
   }
 
+  forceAllwaysActiveToBeAllow(){
+    this.config.bannerBlocks?.forEach(block => {
+      if (block.allwaysActive) block.status = 'allow';
+    });
+  }
+
   autoExpandConfig(){
     this.isConfigOpen = false;
     if (this.config.expandConfig && this.config.expandConfig === true){
@@ -192,6 +198,7 @@ export class TppccBannerComponent implements OnInit {
         break;
       case "save":
         // Usar la configuración que ya se ha establecido
+        this.forceAllwaysActiveToBeAllow();
         this.cookieService.sendStatusChangedEvent();
         this.isDlgOpen = false;
         this.isBtnOpen = this.isBtnOpenRestore;
